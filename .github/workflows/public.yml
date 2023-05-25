@@ -15,5 +15,5 @@ jobs:
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       
       - name: Docker Image Status
-        run: docker image
+        run: docker image ls
         
