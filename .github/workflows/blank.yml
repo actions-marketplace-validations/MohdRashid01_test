@@ -25,7 +25,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-#          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-          tags: mohdrashid01/your-docker-image:latest
+#          tags: mohdrashid01/your-docker-image:latest
+          tags: mohdrashid01/build-push-action:latest
           registry: docker.pkg.github.com
           repository: mohdrashid01/your-github-packages-repo/your-docker-image
