@@ -1,4 +1,5 @@
 name: Publish Docker Image
+
 on:
   push:
     branches:
@@ -9,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
+        uses: docker/setup-buildx-action@v2
+#        uses: actions/hello-world-docker-action@v2
+        
+      - name: Docker Image Status
+        run: docker image ls
+        
       - name: Build and push Docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
+          file: ./Dockerfile
           push: true
+#          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
           tags: mohdrashid01/your-docker-image:latest
           registry: docker.pkg.github.com
           repository: mohdrashid01/your-github-packages-repo/your-docker-image
