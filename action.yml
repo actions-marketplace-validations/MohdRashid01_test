@@ -1,8 +1,6 @@
 # action.yml
 name: 'Hello-DevOps-Test'
 description: 'Greet someone and record the time'
-  icon: activity
-  color: red
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
